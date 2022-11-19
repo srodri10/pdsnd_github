@@ -21,7 +21,7 @@ OPTIONS = ['yes', 'no']
 
 
 def display_data(df):
-    """Displays 5 rows of data from the csv file for the selected city.
+    """Displays 10 rows of data from the csv file for the selected city.
     Args:
         param1 (df): The data frame you wish to work with.
     Returns:
@@ -49,11 +49,11 @@ def display_data(df):
 #Extra while loop here to ask user if they want to continue viewing data
     while rdata == 'yes':
         print("Do you wish to view more raw data?")
-        counter += 5
+        counter += 10
         rdata = input().lower()
         #If user opts for it, this displays next 5 rows of data
         if rdata == "yes":
-            print(df[counter:counter+5])
+            print(df[counter:counter+10])
         elif rdata != "yes":
              break
 
