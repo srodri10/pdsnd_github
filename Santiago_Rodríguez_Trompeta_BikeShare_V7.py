@@ -242,10 +242,12 @@ def trip_duration_stats(df, city):
 
 
     # display total travel time
-
-    df['Time Delta'] = df['End Time'] - df['Start Time']
-    total_time_delta = df['Time Delta'].sum()
-    print('1) The total travel time was:', total_time_delta)
+    try:
+        df['Time Delta'] = df['End Time'] - df['Start Time']
+        total_time_delta = df['Time Delta'].sum()
+        print('1) The total travel time was:', total_time_delta)
+    except Exception as e:
+        print('Could\'t calculate the total travel time of users, as an Error ocurred:{}'.format(e))
 
 
 
