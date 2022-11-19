@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 """Bikeshare
 by Santiago Rodríguez Trompeta
-Date of Creation: 19th November 2022
 """
 
 import time
@@ -251,10 +250,6 @@ def trip_duration_stats(df, city):
         print('Could\'t calculate the total travel time of users, as an Error ocurred:{}'.format(e))
 
 
-<<<<<<< HEAD
-=======
-
->>>>>>> documentation
 
     # display mean travel time
 

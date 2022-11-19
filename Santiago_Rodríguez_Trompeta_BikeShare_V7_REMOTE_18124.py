@@ -22,7 +22,7 @@ OPTIONS = ['yes', 'no']
 
 
 def display_data(df):
-    """Displays 10 rows of data from the csv file for the selected city.
+    """Displays 5 rows of data from the csv file for the selected city.
     Args:
         param1 (df): The data frame you wish to work with.
     Returns:
@@ -50,11 +50,11 @@ def display_data(df):
 #Extra while loop here to ask user if they want to continue viewing data
     while rdata == 'yes':
         print("Do you wish to view more raw data?")
-        counter += 10
+        counter += 5
         rdata = input().lower()
         #If user opts for it, this displays next 5 rows of data
         if rdata == "yes":
-            print(df[counter:counter+10])
+            print(df[counter:counter+5])
         elif rdata != "yes":
              break
 
@@ -243,18 +243,12 @@ def trip_duration_stats(df, city):
 
 
     # display total travel time
-    try:
-        df['Time Delta'] = df['End Time'] - df['Start Time']
-        total_time_delta = df['Time Delta'].sum()
-        print('1) The total travel time was:', total_time_delta)
-    except Exception as e:
-        print('Could\'t calculate the total travel time of users, as an Error ocurred:{}'.format(e))
+
+    df['Time Delta'] = df['End Time'] - df['Start Time']
+    total_time_delta = df['Time Delta'].sum()
+    print('1) The total travel time was:', total_time_delta)
 
 
-<<<<<<< HEAD
-=======
-
->>>>>>> documentation
 
     # display mean travel time
 
@@ -313,7 +307,6 @@ def user_stats(df, city):
 
 
 def main():
-        print("***Welcome-Bienvenido***")
     while True:
         city, month, day = get_filters()
         df = load_data(city, month, day)
